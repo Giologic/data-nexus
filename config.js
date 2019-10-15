@@ -5,7 +5,7 @@
 
 module.exports = {
   serverPort: 5000, // process.env.PORT
-  dbUrl: "mongodb://mongo:27017/boilerplate_db", // process.env.DB_URL
+  dbUrl: "mongodb://mongo:27017/data-nexus-db", // process.env.DB_URL
   mongooseOptions: {
     autoIndex: false, // Don't build indexes
     reconnectTries: 30, // Retry up to 30 times
@@ -16,4 +16,5 @@ module.exports = {
     useNewUrlParser: true,
     useUnifiedTopology: true
   },
+  apiVersion: 'v1'
 }

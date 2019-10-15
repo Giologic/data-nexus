@@ -22,7 +22,7 @@ const DataSchema = new Schema({
     type: Date
   },
   data: {
-    type: String,
+    type: Object,
     required: true,
   },
   collection_type: {
@@ -42,6 +42,7 @@ DataSchema.methods.toJSON = function() {
     description: this.description,
     created_at: this.created_at,
     updated_at: this.updated_at,
+    collection_type: this.collection_type,
     data: this.data
   }
 };
