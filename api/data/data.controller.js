@@ -29,7 +29,10 @@ exports.getAllDatasetsFromCollection = async function(req, res) {
         datasets: datasets.map( data => {
           console.log(data)
           return {
-            endpoint: `/api/${config.apiVersion}/${data.collection_type}/${data.name}`
+            name: data.name,
+            endpoint: `/api/${config.apiVersion}/${data.collection_type}/${data.name}`,
+            created_at: data.created_at,
+            updated_at: data.updated_at
           }
         })
       })
