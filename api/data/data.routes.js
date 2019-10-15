@@ -7,6 +7,7 @@ const upload = multer({ dest: 'uploads/' })
 
 module.exports = function(router) {
   router.post('/upload/:collection_type', upload.single('data_file'), controller.uploadData)
-  router.get('/terrain', controller.getAllDatasets)
-  router.get('/terrain/:name', controller.getData)
+  router.get('/datasets', controller.getAllDatasets)
+  router.get('/:collection_type', controller.getAllDatasetsFromCollection)
+  router.get('/:collection_type/:name', controller.getDatasetFromCollection)
 }
