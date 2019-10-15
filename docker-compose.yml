@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+  mongo:
+    image: mongo:3.6-xenial
+    ports:
+      - 27017:27017
+
+
+  app: &app_base
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 5000:5000
+    depends_on:
+      - mongo
+
+  # test:
+  #   <<: *app_base
+  #   ports: []
+  #   command: npm run test
+
+  # seed:
+  #   <<: *app_base
+  #   ports: []
+  #   command: npm run seed
+
+networks:
+  default: 
